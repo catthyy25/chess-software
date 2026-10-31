@@ -1,4 +1,38 @@
 package software.ulpgc.gameservice.infrastructure.adapters;
 
-public class FenBoardDeserializer {
+import software.ulpgc.gameservice.application.domain.model.Board;
+import software.ulpgc.gameservice.application.domain.model.Piece;
+import software.ulpgc.gameservice.application.domain.model.Square;
+import software.ulpgc.gameservice.application.ports.BoardDeserializer;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class FenBoardDeserializer implements BoardDeserializer {
+
+    @Override
+    public Board deserialize(String value) {
+        return deserialize(value.split("/"));
+    }
+
+    private Board deserialize(String[] ranks) {
+        return new Board(piecesIn(ranks));
+    }
+
+    private Map<Square, Piece> piecesIn(String[] ranks) {
+        Map<Square, Piece> map = new HashMap<>();
+        int j = 8;
+        for (String rank: ranks) {
+            map.putAll(piecesIn(j--, rank.toCharArray()));
+        }
+        return map;
+    }
+
+    private Map<Square, Piece> piecesIn(int j, char[] rank) {
+        int i = 1;
+        for (char order : rank) {
+            Square square = Square.of(i, j);
+        }
+        return Map.of();
+    }
 }
