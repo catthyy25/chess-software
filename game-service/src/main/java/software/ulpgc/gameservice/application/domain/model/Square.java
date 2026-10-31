@@ -2,6 +2,8 @@ package software.ulpgc.gameservice.application.domain.model;
 
 import java.util.Arrays;
 
+import static java.util.spi.ToolProvider.findFirst;
+
 public record Square(File file, Rank rank) {
 
     public static Square of(String value) {
@@ -17,7 +19,7 @@ public record Square(File file, Rank rank) {
     }
 
     private static File fileIn(char c) {
-        return Arrays.stream(File.values()).filter(file -> file.symbol() == c).findFirst().orElse(null);
+        return Arrays.stream(File.values()).filter(file -> file.symbol() == c).findFirst().orElseThrow();
     }
 
     private static Rank rankIn(String value) {
@@ -25,6 +27,6 @@ public record Square(File file, Rank rank) {
     }
 
     private static Rank rankIn(char c) {
-        return Arrays.stream(Rank.values()).filter(rank -> rank.symbol() == c).findFirst().orElse(null);
+        return Arrays.stream(Rank.values()).filter(rank -> rank.symbol() == c).findFirst().orElseThrow();
     }
 }

@@ -5,6 +5,7 @@ import software.ulpgc.gameservice.application.domain.model.Piece;
 import software.ulpgc.gameservice.application.domain.model.Square;
 import software.ulpgc.gameservice.application.ports.BoardDeserializer;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +23,7 @@ public class FenBoardDeserializer implements BoardDeserializer {
     private Map<Square, Piece> piecesIn(String[] ranks) {
         Map<Square, Piece> map = new HashMap<>();
         int j = 7;
-        for (String rank: ranks) {
+        for (String rank : ranks) {
             map.putAll(piecesIn(j--, rank.toCharArray()));
         }
         return map;
@@ -38,26 +39,10 @@ public class FenBoardDeserializer implements BoardDeserializer {
         return map;
     }
 
-    private static final Map<Character, Piece> PIECES = Map.ofEntries(
-            Map.entry('K', Piece.WhiteKing),
-            Map.entry('Q', Piece.WhiteQueen),
-            Map.entry('R', Piece.WhiteRook),
-            Map.entry('B', Piece.WhiteBishop),
-            Map.entry('N', Piece.WhiteKnight),
-            Map.entry('P', Piece.WhitePawn),
-            Map.entry('k', Piece.BlackKing),
-            Map.entry('q', Piece.BlackQueen),
-            Map.entry('r', Piece.BlackRook),
-            Map.entry('b', Piece.BlackBishop),
-            Map.entry('n', Piece.BlackKnight),
-            Map.entry('p', Piece.BlackPawn)
-    );
-
     private Piece pieceOf(char symbol) {
-        Piece piece = PIECES.get(symbol);
-        if (piece == null) {
-            throw new IllegalArgumentException("Invalid FEN symbol: " + symbol);
-        }
-        return piece;
+        return Arrays.stream(Piece.values())
+                .filter(piece -> piece.symbol() == symbol)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid FEN symbol: " + symbol));
     }
 }

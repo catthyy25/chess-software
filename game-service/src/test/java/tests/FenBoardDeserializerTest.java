@@ -9,6 +9,7 @@ import software.ulpgc.gameservice.application.domain.model.Square;
 import software.ulpgc.gameservice.infrastructure.adapters.FenBoardDeserializer;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class FenBoardDeserializerTest {
     private FenBoardDeserializer deserializer;
@@ -38,9 +39,7 @@ public class FenBoardDeserializerTest {
     @Test
     @DisplayName("Debe deserializar una posición personalizada con pocas piezas")
     void shouldDeserializeCustomPosition() {
-        String fenCustom = "4k3/8/8/8/8/8/8/4K3 w - - 0 1";
-        Board actualBoard = deserializer.deserialize(fenCustom);
-        assertThat(actualBoard).isNotNull();
+        Board actualBoard = deserializer.deserialize("4k3/8/8/8/8/8/8/4K3 w - - 0 1");
         assertThat(actualBoard.pieces())
                 .hasSize(2)
                 .containsEntry(Square.of("e1"), Piece.WhiteKing)
@@ -50,10 +49,16 @@ public class FenBoardDeserializerTest {
     @Test
     @DisplayName("Debe ignorar los metadatos de FEN (turno, enroques...) y centrarse solo en el tablero")
     void shouldIgnoreFenMetadata() {
-        String fenWithMetadata = "4k3/8/8/8/8/8/8/4K3 b KQkq e3 5 12";
-        Board actualBoard = deserializer.deserialize(fenWithMetadata);
+        Board actualBoard = deserializer.deserialize("4k3/8/8/8/8/8/8/4K3 b KQkq e3 5 12");
         assertThat(actualBoard.pieces())
                 .containsEntry(Square.of("e1"), Piece.WhiteKing)
                 .containsEntry(Square.of("e8"), Piece.BlackKing);
+    }
+
+    @Test
+    @DisplayName("Debe rechazar símbolos inválidos")
+    void shouldRejectInvalidSymbols() {
+        assertThatThrownBy(() -> deserializer.deserialize("x7/8/8/8/8/8/8/8"))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }

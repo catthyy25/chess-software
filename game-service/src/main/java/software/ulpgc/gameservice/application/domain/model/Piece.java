@@ -1,8 +1,18 @@
 package software.ulpgc.gameservice.application.domain.model;
 
 public enum Piece {
-    WhitePawn, WhiteKnight, WhiteBishop, WhiteRook, WhiteQueen, WhiteKing,
-    BlackPawn, BlackKnight, BlackBishop, BlackRook, BlackQueen, BlackKing;
+    WhitePawn('P'), WhiteKnight('N'), WhiteBishop('B'), WhiteRook('R'), WhiteQueen('Q'), WhiteKing('K'),
+    BlackPawn('p'), BlackKnight('n'), BlackBishop('b'), BlackRook('r'), BlackQueen('q'), BlackKing('k');
+
+    private final char symbol;
+
+    Piece(char symbol) {
+        this.symbol = symbol;
+    }
+
+    public char symbol() {
+        return symbol;
+    }
 
     public boolean isWhite() {
         return this.name().startsWith("White");
