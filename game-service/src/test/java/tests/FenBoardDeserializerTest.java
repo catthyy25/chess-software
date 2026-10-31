@@ -24,7 +24,7 @@ public class FenBoardDeserializerTest {
         String fenInitial = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
         Board expectedBoard = Board.initial();
         Board actualBoard = deserializer.deserialize(fenInitial);
-        assertThat(actualBoard).isNotNull();
+        assertThat(actualBoard).isEqualTo(expectedBoard);
     }
 
     @Test
