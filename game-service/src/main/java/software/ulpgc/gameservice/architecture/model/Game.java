@@ -6,11 +6,15 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Game implements Iterable<Position> {
-    private List<Move> move;
+    private final List<Position> positions;
+
+    public Game(List<Position> positions) {
+        this.positions = positions;
+    }
 
     @NotNull
     @Override
     public Iterator<Position> iterator() {
-        return null;
+        return positions.iterator();
     }
 }
