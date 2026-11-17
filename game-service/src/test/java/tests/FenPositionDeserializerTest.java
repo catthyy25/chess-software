@@ -11,6 +11,7 @@ import software.ulpgc.gameservice.architecture.model.board.Piece;
 import software.ulpgc.gameservice.architecture.model.board.Square;
 import software.ulpgc.gameservice.infrastructure.adapters.FenBoardDeserializer;
 import software.ulpgc.gameservice.infrastructure.adapters.FenPositionDeserializer;
+import software.ulpgc.gameservice.infrastructure.adapters.FenStateDeserializer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -20,7 +21,7 @@ public class FenPositionDeserializerTest {
 
     @BeforeEach
     void setUp() {
-        deserializer = new FenPositionDeserializer(new FenBoardDeserializer());
+        deserializer = new FenPositionDeserializer(new FenBoardDeserializer(), new FenStateDeserializer());
     }
 
     @Test

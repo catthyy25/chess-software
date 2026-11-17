@@ -1,4 +1,4 @@
-package software.ulpgc.gameservice.infrastructure;
+package software.ulpgc.gameservice;
 
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
