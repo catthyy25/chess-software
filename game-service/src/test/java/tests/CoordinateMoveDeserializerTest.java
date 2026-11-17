@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import software.ulpgc.gameservice.architecture.model.Move;
 import software.ulpgc.gameservice.architecture.model.board.Square;
-import software.ulpgc.gameservice.infrastructure.adapters.CoordinateMoveDeserializer;
+import software.ulpgc.gameservice.infrastructure.adapters.serialization.CoordinateMoveDeserializer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

@@ -4,12 +4,11 @@ import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.Context;
 import software.ulpgc.gameservice.architecture.UseCase;
-import software.ulpgc.gameservice.architecture.usecases.*;
 import software.ulpgc.gameservice.architecture.usecases.CreateGameOperation;
 import software.ulpgc.gameservice.architecture.usecases.RetrieveGameOperation;
 import software.ulpgc.gameservice.architecture.usecases.UpdateGameOperation;
 import software.ulpgc.gameservice.infrastructure.adapters.JavalinContextInput;
-import software.ulpgc.gameservice.infrastructure.adapters.persistance.FileGameStore;
+import software.ulpgc.gameservice.infrastructure.adapters.persistence.FileGameStore;
 
 import java.io.File;
 

@@ -1,4 +1,4 @@
-package software.ulpgc.gameservice.infrastructure.adapters;
+package software.ulpgc.gameservice.infrastructure.adapters.serialization;
 
 import software.ulpgc.gameservice.architecture.model.Board;
 import software.ulpgc.gameservice.architecture.model.board.Piece;

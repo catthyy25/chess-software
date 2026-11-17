@@ -1,4 +1,4 @@
-package software.ulpgc.gameservice.infrastructure.adapters;
+package software.ulpgc.gameservice.infrastructure.adapters.serialization;
 
 import software.ulpgc.gameservice.architecture.model.Position;
 import software.ulpgc.gameservice.architecture.ports.BoardDeserializer;

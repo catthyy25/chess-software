@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import software.ulpgc.gameservice.architecture.model.Board;
 import software.ulpgc.gameservice.architecture.model.board.Piece;
 import software.ulpgc.gameservice.architecture.model.board.Square;
-import software.ulpgc.gameservice.infrastructure.adapters.FenBoardDeserializer;
+import software.ulpgc.gameservice.infrastructure.adapters.serialization.FenBoardDeserializer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

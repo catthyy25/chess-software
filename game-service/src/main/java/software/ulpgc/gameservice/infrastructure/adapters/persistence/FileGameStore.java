@@ -1,4 +1,4 @@
-package software.ulpgc.gameservice.infrastructure.adapters.persistance;
+package software.ulpgc.gameservice.infrastructure.adapters.persistence;
 
 
 import software.ulpgc.gameservice.architecture.ports.GameStore;

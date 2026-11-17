@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import software.ulpgc.gameservice.architecture.model.CastlingRight;
 import software.ulpgc.gameservice.architecture.model.State;
 import software.ulpgc.gameservice.architecture.model.board.Color;
-import software.ulpgc.gameservice.infrastructure.adapters.FenStateDeserializer;
+import software.ulpgc.gameservice.infrastructure.adapters.serialization.FenStateDeserializer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import software.ulpgc.gameservice.architecture.model.Board;
 import software.ulpgc.gameservice.architecture.model.Game;
 import software.ulpgc.gameservice.architecture.model.board.Color;
-import software.ulpgc.gameservice.infrastructure.adapters.FenBoardDeserializer;
-import software.ulpgc.gameservice.infrastructure.adapters.FenGameDeserializer;
-import software.ulpgc.gameservice.infrastructure.adapters.FenPositionDeserializer;
-import software.ulpgc.gameservice.infrastructure.adapters.FenStateDeserializer;
+import software.ulpgc.gameservice.infrastructure.adapters.serialization.FenBoardDeserializer;
+import software.ulpgc.gameservice.infrastructure.adapters.serialization.FenGameDeserializer;
+import software.ulpgc.gameservice.infrastructure.adapters.serialization.FenPositionDeserializer;
+import software.ulpgc.gameservice.infrastructure.adapters.serialization.FenStateDeserializer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
