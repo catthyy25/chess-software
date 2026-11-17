@@ -1,4 +1,4 @@
-package software.ulpgc.gameservice.application.domain.model;
+package software.ulpgc.gameservice.architecture.model.board;
 
 public enum File {
     A('a'),

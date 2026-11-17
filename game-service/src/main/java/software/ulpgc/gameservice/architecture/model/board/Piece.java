@@ -1,4 +1,4 @@
-package software.ulpgc.gameservice.application.domain.model;
+package software.ulpgc.gameservice.architecture.model.board;
 
 public enum Piece {
     WhitePawn('P'), WhiteKnight('N'), WhiteBishop('B'), WhiteRook('R'), WhiteQueen('Q'), WhiteKing('K'),

@@ -1,4 +1,7 @@
-package software.ulpgc.gameservice.application.domain.model;
+package software.ulpgc.gameservice.architecture.model;
+
+import software.ulpgc.gameservice.architecture.model.board.Piece;
+import software.ulpgc.gameservice.architecture.model.board.Square;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,6 @@
-package software.ulpgc.gameservice.application.domain.model;
+package software.ulpgc.gameservice.architecture.model.board;
 
 import java.util.Arrays;
-
-import static java.util.spi.ToolProvider.findFirst;
 
 public record Square(File file, Rank rank) {
 
