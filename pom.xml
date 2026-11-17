@@ -13,6 +13,10 @@
         <module>backend</module>
         <module>game-service</module>
         <module>login-service</module>
+        <module>player-service</module>
+        <module>match-service</module>
+        <module>register-service</module>
+        <module>auth-service</module>
     </modules>
 
     <properties>
